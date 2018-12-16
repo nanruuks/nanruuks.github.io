@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>纯粹合理卖呆</title>
+    <link>https://nanruuks.github.io/</link>
+    <description>Recent content on 纯粹合理卖呆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Dec 2018 20:38:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://nanruuks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>虚拟主机大搬家</title>
+      <link>https://nanruuks.github.io/post/moving-to-new-vps/</link>
+      <pubDate>Sun, 09 Dec 2018 20:38:37 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/moving-to-new-vps/</guid>
+      <description>几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。 得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首</description>
+    </item>
+    
+    <item>
+      <title>如何实现一键分享到新浪微博</title>
+      <link>https://nanruuks.github.io/post/log-of-sharingoptions/</link>
+      <pubDate>Sat, 03 Nov 2018 21:20:23 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/log-of-sharingoptions/</guid>
+      <description>北京时间2018年10月9日，Google宣布 Google+ 已经走到尽头。回头看这使用 Google+ 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后</description>
+    </item>
+    
+    <item>
+      <title>爆浆鸡排</title>
+      <link>https://nanruuks.github.io/post/exploding-cheese-steak/</link>
+      <pubDate>Mon, 29 Oct 2018 22:22:37 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/exploding-cheese-steak/</guid>
+      <description>我的文笔启蒙之一刘原先生（另一位是魏喆先生）曾提到，想不出什么题材的时候，就写吃的。嗯，忽而发现许久没更Blog了（其实有不少存在草稿箱里）</description>
+    </item>
+    
+    <item>
+      <title>Windows 10真是越来越反人类了</title>
+      <link>https://nanruuks.github.io/post/antihuman-windowsx/</link>
+      <pubDate>Wed, 11 Jul 2018 21:47:30 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/antihuman-windowsx/</guid>
+      <description>笔者近日已逐渐被Windows 10送上劝退的边缘。 即使不提UWP应用众多的后台bug，或者半身不遂的设置和控制面板，单单是Windows Up</description>
+    </item>
+    
+    <item>
+      <title>趁忘前写下的Hugo折腾全记录</title>
+      <link>https://nanruuks.github.io/post/ureru-made-no-zen-kiroku/</link>
+      <pubDate>Mon, 02 Jul 2018 09:19:59 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/ureru-made-no-zen-kiroku/</guid>
+      <description>上一篇文里提到，笔者在某个深夜里扣动鼠标开始了Blog的折腾之旅。“既然汪先生用的是JustWriting，那我也照着依样画葫芦做一个不就好</description>
+    </item>
+    
+    <item>
+      <title>为什么我要架设Blog</title>
+      <link>https://nanruuks.github.io/post/why-i-make-a-blog/</link>
+      <pubDate>Tue, 26 Jun 2018 01:46:16 +0800</pubDate>
+      
+      <guid>https://nanruuks.github.io/post/why-i-make-a-blog/</guid>
+      <description>为什么我要在这公众号遍地都是的年代，如此复古地架设、开通私人Blog呢？思来想去，大抵是受了汪先生的启发。 这是一个很长的故事了。 时间拨回到五</description>
+    </item>
+    
+  </channel>
+</rss>

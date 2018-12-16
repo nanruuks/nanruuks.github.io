@@ -1,0 +1,677 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.42.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>虚拟主机大搬家</title>
+    <meta name="author" content="南乳　花生">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://nanruuks.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。 得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首">
+    <meta property="og:description" content="几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。 得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="虚拟主机大搬家">
+    <meta property="og:url" content="/post/moving-to-new-vps/">
+    <meta property="og:site_name" content="纯粹合理卖呆">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="纯粹合理卖呆">
+    <meta name="twitter:description" content="几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。 得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://nanruuks.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://nanruuks.github.io/">纯粹合理卖呆</a>
+  </div>
+  
+    
+      <a class="header-right-icon open-algolia-search"
+         href="https://nanruuks.github.io/#search">
+    
+    
+      <i class="fa fa-lg fa-search"></i>
+    
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://nanruuks.github.io/#about">
+          <img class="sidebar-profile-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">南乳　花生</h4>
+        
+          <h5 class="sidebar-profile-bio">My love is like Kanon.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/nanruuks" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-camera-retro"></i>
+      
+      <span class="sidebar-button-desc">Gallary</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      虚拟主机大搬家
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-12-09T20:38:37&#43;08:00">
+        
+  December 9, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。</p>
+
+<p>得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首先装个Debian 9 (我真是受够了陈旧的 Centos 6 x86 了，趁着买新的机器赶紧换掉) 。</p>
+
+<h1 id="安装v2ray">安装V2Ray</h1>
+
+<p>鉴于Shadowsocks已经被盯上，笔者选择转投技术比较新的V2Ray：</p>
+
+<pre><code>apt-get update
+apt-get install unzip
+apt-get install curl
+bash &lt;(curl -s -L https://233blog.com/v2ray.sh)
+</code></pre>
+
+<p>然后选择安装，输入1，回车；</p>
+
+<p>接下选择传输协议，笔者选择8，伪装为微信通话 (如果被运营商Qos的话请切回TCP) ；</p>
+
+<p>选择端口，老规矩挪用Minecraft的19132端口；</p>
+
+<p>开启广告拦截，并且不配置Shadowsocks。这一部分算是大功告成。</p>
+
+<h1 id="安装transmission">安装Transmission</h1>
+
+<p>说实话，其实这里才是重头戏，笔者在安装transmission这一步卡了整整一个下午 (时间都去哪儿了?) 。好，废话少说：</p>
+
+<p><code>apt-get transmission-daemon -y</code></p>
+
+<p>这时候你要是急着打开浏览器登录<a href="http://ip.9091，你只能看到这么几行字儿：">http://ip.9091，你只能看到这么几行字儿：</a></p>
+
+<blockquote>
+<p>403: Forbidden</p>
+
+<p>Unauthorized IP Address.</p>
+
+<p>Either disable the IP address whitelist or add your address to it.</p>
+
+<p>If you&rsquo;re editing settings.json, see the &lsquo;rpc-whitelist&rsquo; and &lsquo;rpc-whitelist-enabled&rsquo; entries.</p>
+
+<p>If you&rsquo;re still using ACLs, use a whitelist instead. See the transmission-daemon manpage for details.</p>
+</blockquote>
+
+<p>子曰：欲速，则不达。</p>
+
+<p><code>/etc/init.d/transmission-daemon stop</code></p>
+
+<p>打开 <span class="highlight-text purple">/var/lib/transmission-daemon/info/settings.json</span> ，修改好 rpc-username 和 rpc-password 两项，并把 rpc-whitelist 和 rpc-whitelist-enabled 两项直接删掉。这时候再打开<a href="http://ip.9091，可以看见Transmission已经可以正常工作了。但是因为默认的下载文件夹藏得比较深，不方便往后的一些操作，所以笔者选择把下载地址修改为">http://ip.9091，可以看见Transmission已经可以正常工作了。但是因为默认的下载文件夹藏得比较深，不方便往后的一些操作，所以笔者选择把下载地址修改为</a> <span class="highlight-text purple">/home/Downloads</span>。最后，别忘了授权并启动：</p>
+
+<pre><code>mkdir -p /home/Downloads
+chmod -R 755 /home/Downloads
+chown -R debian-transmission /home/Downloads
+chgrp -R debian-transmission /home/Downloads
+/etc/init.d/transmission-daemon start 
+</code></pre>
+
+<h1 id="安装apache2">安装apache2</h1>
+
+<p>离线下载的功能基本就搭建好了。但是，服务器上的东西怎么拉回本地呢？</p>
+
+<p>两个办法，搭建FTP或者HTTP服务。前者安装vsftpd，后者安装apache2。因为后者结合Chrome浏览器可以有在线观看视频的功能，笔者选择安装apache2。</p>
+
+<p><code>apt-get install apache2</code></p>
+
+<p>Apache默认的根目录路径为 <span class="highlight-text purple">/var/www/html</span>，这不符合笔者的需要，打开 <span class="highlight-text purple">/etc/apache2/sites-available/000-default.conf</span>，作出如下修改：</p>
+
+<pre><code>#ServerName 127.0.0.1
+ServerAdmin webmaster@localhost
+DocumentRoot /home/Downloads
+&lt;Directory &quot;/home/Downloads&quot;&gt;
+Options Indexes FollowSymLinks
+AllowOverride None
+Require all granted
+&lt;/Directory&gt;
+</code></pre>
+
+<p>私人的离线下载服务器到这里算是正式完工。</p>
+
+<p>下周有时间的话，把 Google BBR 和 Resilio Sync也搞了。</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/log-of-sharingoptions/" data-tooltip="如何实现一键分享到新浪微博">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?url=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 <a href="https://github.com/nanruuks">Naruuks</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/log-of-sharingoptions/" data-tooltip="如何实现一键分享到新浪微博">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?url=https://nanruuks.github.io/post/moving-to-new-vps/">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
+          <i class="fa fa-qq"></i><span>Share on QQ</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
+          <i class="fa fa-weibo"></i><span>Share on Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">南乳　花生</h4>
+    
+      <div id="about-card-bio">My love is like Kanon.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Amateur graphic designer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Canton
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/moving-to-new-vps/">
+                <h3 class="media-heading">虚拟主机大搬家</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。 得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/log-of-sharingoptions/">
+                <h3 class="media-heading">如何实现一键分享到新浪微博</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">北京时间2018年10月9日，Google宣布 Google+ 已经走到尽头。回头看这使用 Google+ 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/exploding-cheese-steak/">
+                <h3 class="media-heading">爆浆鸡排</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">我的文笔启蒙之一刘原先生（另一位是魏喆先生）曾提到，想不出什么题材的时候，就写吃的。嗯，忽而发现许久没更Blog了（其实有不少存在草稿箱里）</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/antihuman-windowsx/">
+                <h3 class="media-heading">Windows 10真是越来越反人类了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">笔者近日已逐渐被Windows 10送上劝退的边缘。 即使不提UWP应用众多的后台bug，或者半身不遂的设置和控制面板，单单是Windows Up</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/ureru-made-no-zen-kiroku/">
+                <h3 class="media-heading">趁忘前写下的Hugo折腾全记录</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">上一篇文里提到，笔者在某个深夜里扣动鼠标开始了Blog的折腾之旅。“既然汪先生用的是JustWriting，那我也照着依样画葫芦做一个不就好</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/why-i-make-a-blog/">
+                <h3 class="media-heading">为什么我要架设Blog</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">为什么我要在这公众号遍地都是的年代，如此复古地架设、开通私人Blog呢？思来想去，大抵是受了汪先生的启发。 这是一个很长的故事了。 时间拨回到五</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         6 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://nanruuks.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://nanruuks.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+

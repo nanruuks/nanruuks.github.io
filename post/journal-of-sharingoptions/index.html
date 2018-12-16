@@ -1,0 +1,654 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.42.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>如何实现一键分享到新浪微博</title>
+    <meta name="author" content="南乳　花生">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://nanruuks.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="北京时间2018年10月9日，Google宣布 Google&#43; 已经走到尽头。回头看这使用 Google&#43; 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后">
+    <meta property="og:description" content="北京时间2018年10月9日，Google宣布 Google&#43; 已经走到尽头。回头看这使用 Google&#43; 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="如何实现一键分享到新浪微博">
+    <meta property="og:url" content="/post/journal-of-sharingoptions/">
+    <meta property="og:site_name" content="纯粹合理卖呆">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="纯粹合理卖呆">
+    <meta name="twitter:description" content="北京时间2018年10月9日，Google宣布 Google&#43; 已经走到尽头。回头看这使用 Google&#43; 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://nanruuks.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://nanruuks.github.io/">纯粹合理卖呆</a>
+  </div>
+  
+    
+      <a class="header-right-icon open-algolia-search"
+         href="https://nanruuks.github.io/#search">
+    
+    
+      <i class="fa fa-lg fa-search"></i>
+    
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://nanruuks.github.io/#about">
+          <img class="sidebar-profile-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">南乳　花生</h4>
+        
+          <h5 class="sidebar-profile-bio">My love is like Kanon.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/nanruuks" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-camera-retro"></i>
+      
+      <span class="sidebar-button-desc">Gallary</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nanruuks.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      如何实现一键分享到新浪微博
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
+        
+  January 1, 1
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>北京时间2018年10月9日，Google宣布 Google+ 已经走到尽头。回头看这使用 Google+ 的五年，最大的收获莫过于结识<a href="https://unee.wang/">汪先生</a>了。只是明年8月一别，不知往后余生是否还能联系得上了。</p>
+
+<blockquote>
+<p>天下无有不散筵席，就合上一千年，少不得有个分开日子。</p>
+</blockquote>
+
+<p>好，伤春悲秋就到此打住，说正事儿：既然 Google plus 即将关闭，那么 G+ 的分享按钮也就没有留下的必要了。打开站点根目录下的<span class="highlight-text purple">config.toml</span>，去掉代码：</p>
+
+<pre><code>[[params.sharingOptions]]
+  name = &quot;Google+&quot;
+  icon = &quot;fa-google-plus&quot;
+  url = &quot;https://plus.google.com/share?url=%s&quot;
+</code></pre>
+
+<p>接着添上以下这段：</p>
+
+<pre><code>[[params.sharingOptions]]
+  name = &quot;Qfriends&quot;
+  icon = &quot;fa-qq&quot;
+  url = &quot;http://connect.qq.com/widget/shareqq/index.html?url=%s&quot;
+
+[[params.sharingOptions]]
+  name = &quot;Weibo&quot;
+  icon = &quot;fa-weibo&quot;
+  url = &quot;http://service.weibo.com/share/share.php?url=%s&quot;
+</code></pre>
+
+<p>这样一来，就实现了一键分享到新浪微博和QQ啦(๑•̀ㅂ•́)و✧</p>
+
+<p>虽然在tranquilpeak这个主题下，name一行的参数显得可有可无，不过笔者还是顺手填上了。至于微信分享，笔者大概观摩了一下，不是一个简单的url可以解决的事情，所以这玩意儿就先搁着了，留着日后再折腾吧。</p>
+
+<p>最后多嘴一句，要是你还想要一键分享到QQ空间，也不难，接着上面写：</p>
+
+<pre><code>[[params.sharingOptions]]
+  name = &quot;Qzone&quot;
+  icon = &quot; &quot;
+  url = &quot;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%s&quot;
+</code></pre>
+
+<p>icon一行可以在<a href="https://fontawesome.com/v4.7.0/icons/">fontawesome.com</a>找到合适的图标，然后填上相应的代码就完事了(要是它有QZone的图标，难道我会偷懒不给你填上吗，笑)。</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/why-i-make-a-blog/" data-tooltip="为什么我要架设Blog">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?url=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 <a href="https://github.com/nanruuks">Naruuks</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/why-i-make-a-blog/" data-tooltip="为什么我要架设Blog">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?url=https://nanruuks.github.io/post/journal-of-sharingoptions/">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fjournal-of-sharingoptions%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fjournal-of-sharingoptions%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fjournal-of-sharingoptions%2F">
+          <i class="fa fa-qq"></i><span>Share on Qfriends</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fjournal-of-sharingoptions%2F">
+          <i class="fa fa-weibo"></i><span>Share on Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">南乳　花生</h4>
+    
+      <div id="about-card-bio">My love is like Kanon.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Amateur graphic designer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Canton
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/testing/">
+                <h3 class="media-heading">Testing</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/log-of-sharingoptions/">
+                <h3 class="media-heading">如何实现一键分享到新浪微博</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">北京时间2018年10月9日，Google宣布 Google+ 已经走到尽头。回头看这使用 Google+ 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/exploding-cheese-steak/">
+                <h3 class="media-heading">爆浆鸡排</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">我的文笔启蒙之一刘原先生（另一位是魏喆先生）曾提到，想不出什么题材的时候，就写吃的。嗯，忽而发现许久没更Blog了（其实有不少存在草稿箱里）</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/antihuman-windowsx/">
+                <h3 class="media-heading">Windows 10真是越来越反人类了</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">笔者近日已逐渐被Windows 10送上劝退的边缘。 即使不提UWP应用众多的后台bug，或者半身不遂的设置和控制面板，单单是Windows Up</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/ureru-made-no-zen-kiroku/">
+                <h3 class="media-heading">趁忘前写下的Hugo折腾全记录</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">上一篇文里提到，笔者在某个深夜里扣动鼠标开始了Blog的折腾之旅。“既然汪先生用的是JustWriting，那我也照着依样画葫芦做一个不就好</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/why-i-make-a-blog/">
+                <h3 class="media-heading">为什么我要架设Blog</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">为什么我要在这公众号遍地都是的年代，如此复古地架设、开通私人Blog呢？思来想去，大抵是受了汪先生的启发。 这是一个很长的故事了。 时间拨回到五</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/journal-of-sharingoptions/">
+                <h3 class="media-heading">如何实现一键分享到新浪微博</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">北京时间2018年10月9日，Google宣布 Google+ 已经走到尽头。回头看这使用 Google+ 的五年，最大的收获莫过于结识汪先生了。只是明年8月一别，不知往后</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         7 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://nanruuks.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://nanruuks.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+
