@@ -44,7 +44,7 @@
     
 
     
-      <meta property="og:image" content="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg">
+      <meta property="og:image" content="https://nanruuks.github.io/images/kitsune-akarin.jpg">
     
 
     
@@ -94,7 +94,7 @@
     
       <div class="sidebar-profile">
         <a href="https://nanruuks.github.io/#about">
-          <img class="sidebar-profile-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+          <img class="sidebar-profile-picture" src="https://nanruuks.github.io/images/kitsune-akarin.jpg" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">南乳　花生</h4>
         
@@ -202,7 +202,7 @@
 
 <p>几天前收到Bandwagon的邮件，我的VPS因Open VZ技术问题停止服务。</p>
 
-<p>得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首先装个Debian 9 (我真是受够了陈旧的 Centos 6 x86 了，趁着买新的机器赶紧换掉) 。</p>
+<p>得，赶紧买新的。年付27美刀的 2018 Black Friday Special V3 CN2 套餐，就你了。到手首先装个Debian 9（我真是受够了陈旧的 Centos 6 x86 了，趁着买新的机器赶紧换掉）。</p>
 
 <h1 id="安装v2ray">安装V2Ray</h1>
 
@@ -216,7 +216,7 @@ bash &lt;(curl -s -L https://233blog.com/v2ray.sh)
 
 <p>然后选择安装，输入1，回车；</p>
 
-<p>接下选择传输协议，笔者选择8，伪装为微信通话 (如果被运营商Qos的话请切回TCP) ；</p>
+<p>接下选择传输协议，笔者选择8，伪装为微信通话（如果被运营商Qos的话请切回TCP）；</p>
 
 <p>选择端口，老规矩挪用Minecraft的19132端口；</p>
 
@@ -224,11 +224,11 @@ bash &lt;(curl -s -L https://233blog.com/v2ray.sh)
 
 <h1 id="安装transmission">安装Transmission</h1>
 
-<p>说实话，其实这里才是重头戏，笔者在安装transmission这一步卡了整整一个下午 (时间都去哪儿了?) 。好，废话少说：</p>
+<p>说实话，其实这里才是重头戏，笔者在安装transmission这一步卡了整整一个下午（时间都去哪儿了？笑）。好，废话少说：</p>
 
 <p><code>apt-get transmission-daemon -y</code></p>
 
-<p>这时候你要是急着打开浏览器登录<a href="http://ip.9091，你只能看到这么几行字儿：">http://ip.9091，你只能看到这么几行字儿：</a></p>
+<p>这时候你要是急着打开浏览器登录ip:9091，你只能看到这么几行字儿：</p>
 
 <blockquote>
 <p>403: Forbidden</p>
@@ -246,7 +246,7 @@ bash &lt;(curl -s -L https://233blog.com/v2ray.sh)
 
 <p><code>/etc/init.d/transmission-daemon stop</code></p>
 
-<p>打开 <span class="highlight-text purple">/var/lib/transmission-daemon/info/settings.json</span> ，修改好 rpc-username 和 rpc-password 两项，并把 rpc-whitelist 和 rpc-whitelist-enabled 两项直接删掉。这时候再打开<a href="http://ip.9091，可以看见Transmission已经可以正常工作了。但是因为默认的下载文件夹藏得比较深，不方便往后的一些操作，所以笔者选择把下载地址修改为">http://ip.9091，可以看见Transmission已经可以正常工作了。但是因为默认的下载文件夹藏得比较深，不方便往后的一些操作，所以笔者选择把下载地址修改为</a> <span class="highlight-text purple">/home/Downloads</span>。最后，别忘了授权并启动：</p>
+<p>打开 <span class="highlight-text purple">/var/lib/transmission-daemon/info/settings.json</span> ，修改好 rpc-username 和 rpc-password 两项，并把 rpc-whitelist 和 rpc-whitelist-enabled 两项直接删掉。这时候再打开ip:9091，可以看见Transmission已经可以正常工作了。但是因为默认的下载文件夹藏得比较深，不方便往后的一些操作，所以笔者选择把下载地址修改为 <span class="highlight-text purple">/home/Downloads</span>。最后，别忘了授权并启动：</p>
 
 <pre><code>mkdir -p /home/Downloads
 chmod -R 755 /home/Downloads
@@ -301,7 +301,7 @@ Require all granted
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/a-report-of-a55/" data-tooltip="一份SONY NW-A55的开箱报告">
               
                   <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                   <i class="fa fa-angle-right"></i>
@@ -327,12 +327,6 @@ Require all granted
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/moving-to-new-vps/">
               <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/moving-to-new-vps/">
-              <i class="fa fa-qq"></i>
             </a>
           </li>
         
@@ -362,7 +356,7 @@ Require all granted
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 <a href="https://github.com/nanruuks">Naruuks</a>. All Rights Reserved
+    &copy; 2019 <a href="https://github.com/nanruuks">Naruuks</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -383,7 +377,7 @@ Require all granted
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://nanruuks.github.io/post/a-report-of-a55/" data-tooltip="一份SONY NW-A55的开箱报告">
               
                   <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                   <i class="fa fa-angle-right"></i>
@@ -409,12 +403,6 @@ Require all granted
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://nanruuks.github.io/post/moving-to-new-vps/">
               <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https://nanruuks.github.io/post/moving-to-new-vps/">
-              <i class="fa fa-qq"></i>
             </a>
           </li>
         
@@ -455,12 +443,6 @@ Require all granted
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
-          <i class="fa fa-qq"></i><span>Share on QQ</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
         <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fnanruuks.github.io%2Fpost%2Fmoving-to-new-vps%2F">
           <i class="fa fa-weibo"></i><span>Share on Weibo</span>
         </a>
@@ -477,7 +459,7 @@ Require all granted
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="http://ww4.sinaimg.cn/large/86588424jw8eu5ubck5ryj20k00k00u8.jpg" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://nanruuks.github.io/images/kitsune-akarin.jpg" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">南乳　花生</h4>
     
@@ -487,14 +469,14 @@ Require all granted
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        Amateur graphic designer
+        Graphic designer
       </div>
     
     
       <div id="about-card-location">
         <i class="fa fa-map-marker"></i>
         <br/>
-        Canton
+        Las Vegas
       </div>
     
   </div>
@@ -518,6 +500,23 @@ Require all granted
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nanruuks.github.io/post/a-report-of-a55/">
+                <h3 class="media-heading">一份SONY NW-A55的开箱报告</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">想要入手一只随身听很久了：相比手机，不必忍受频繁的消息提醒，也不必忍受点开应用的欲望蠢动，只是安安静静地听音乐。先说说笔者的选购经历吧。预算</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -628,7 +627,7 @@ Require all granted
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         6 posts found
+         7 posts found
       </p>
     </div>
   </div>
